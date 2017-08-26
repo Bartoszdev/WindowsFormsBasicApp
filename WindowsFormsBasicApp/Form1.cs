@@ -16,5 +16,22 @@ namespace WindowsFormsBasicApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int c = 0; c < 253; c++)
+            {
+                this.BackColor = Color.FromArgb(c, 225 - c, c);
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(3);
+
+            }
+            for (int c = 253; c < 254; c --)
+            {
+                this.BackColor = Color.FromArgb(c, 225 - c, c);
+                Application.DoEvents();
+                while (Visible == true) ;
+            }
+        }
     }
 }
